@@ -45,19 +45,19 @@ INSERT INTO `customers` (`id`, `customer_name`, `customer_phone`, `customer_addr
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 
 -- Dumping structure for table loan_management.customerloan
-CREATE TABLE IF NOT EXISTS `customerloan` (
-  `CustomerLoanId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `customerloans` (
+  `CustomerId` int(11) NOT NULL AUTO_INCREMENT,
   `LoanId` int(11) NOT NULL,
-  PRIMARY KEY (`CustomerLoanId`, `LoanId`),
+  PRIMARY KEY (`CustomerId`, `LoanId`),
   -- KEY `CustomerLoan_FK1` (`CustomerLoanId`),
   -- KEY `CustomerLoan_FK2` (`LoanId`),
-  CONSTRAINT `CustomerLoan_FK1` FOREIGN KEY (`CustomerLoanId`) REFERENCES `customers` (`id`),
-  CONSTRAINT `CustomerLoan_FK2` FOREIGN KEY (`LoanId`) REFERENCES `loan` (`id`)
+  CONSTRAINT `CustomerLoan_FK1` FOREIGN KEY (`CustomerId`) REFERENCES `customers` (`id`),
+  CONSTRAINT `CustomerLoan_FK2` FOREIGN KEY (`LoanId`) REFERENCES `loans` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table loan_management.customerloan: ~10 rows (approximately)
-/*!40000 ALTER TABLE `customerloan` DISABLE KEYS */;
-INSERT INTO `customerloan` (`CustomerLoanId`, `LoanId`) VALUES
+/*!40000 ALTER TABLE `customerloans` DISABLE KEYS */;
+INSERT INTO `customerloans` (`CustomerId`, `LoanId`) VALUES
 	(1, 6),
 	(2, 8),
 	(3, 7),
@@ -68,18 +68,18 @@ INSERT INTO `customerloan` (`CustomerLoanId`, `LoanId`) VALUES
 	(8, 2),
 	(9, 4),
 	(10, 5);
-/*!40000 ALTER TABLE `customerloan` ENABLE KEYS */;
+/*!40000 ALTER TABLE `customerloans` ENABLE KEYS */;
 
 -- Dumping structure for table loan_management.loan
-CREATE TABLE IF NOT EXISTS `loan` (
+CREATE TABLE IF NOT EXISTS `loans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `loan_amount` decimal(38,2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table loan_management.loan: ~10 rows (approximately)
-/*!40000 ALTER TABLE `loan` DISABLE KEYS */;
-INSERT INTO `loan` (`id`, `loan_amount`) VALUES
+/*!40000 ALTER TABLE `loans` DISABLE KEYS */;
+INSERT INTO `loans` (`id`, `loan_amount`) VALUES
 	(1, 135532.99),
 	(2, 34367.53),
 	(3, 45086.74),
@@ -90,22 +90,22 @@ INSERT INTO `loan` (`id`, `loan_amount`) VALUES
 	(8, 12416.32),
 	(9, 17250.83),
 	(10, 46431.85);
-/*!40000 ALTER TABLE `loan` ENABLE KEYS */;
+/*!40000 ALTER TABLE `loans` ENABLE KEYS */;
 
--- Dumping structure for table loan_management.payment
-CREATE TABLE IF NOT EXISTS `payment` (
+-- Dumping structure for table loan_management.payments
+CREATE TABLE IF NOT EXISTS `payments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `LoanId` int(11) NOT NULL,
   `payment_date` date NOT NULL,
   `payment_amount` decimal(38,2) NOT NULL,
   PRIMARY KEY (`id`),
   -- KEY `CustomerLoan_FK` (`LoanId`),
-  CONSTRAINT `CustomerLoan_FK` FOREIGN KEY (`LoanId`) REFERENCES `loan` (`id`)
+  CONSTRAINT `CustomerLoan_FK` FOREIGN KEY (`LoanId`) REFERENCES `loans` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table loan_management.payment: ~10 rows (approximately)
-/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
-INSERT INTO `payment` (`id`, `LoanId`, `payment_date`, `payment_amount`) VALUES
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+INSERT INTO `payments` (`id`, `LoanId`, `payment_date`, `payment_amount`) VALUES
 	(1, 1, '2022-02-20', 35532.99),
 	(2, 6, '2022-03-19', 7818.63),
 	(3, 4, '2022-01-12', 74562.54),
@@ -116,7 +116,7 @@ INSERT INTO `payment` (`id`, `LoanId`, `payment_date`, `payment_amount`) VALUES
 	(8, 9, '2022-02-27', 17250.83),
 	(9, 2, '2022-02-19', 34367.53),
 	(10, 7, '2022-02-08', 31003.82);
-/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
