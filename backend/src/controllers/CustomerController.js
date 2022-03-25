@@ -13,3 +13,16 @@ exports.create = async (req, res) => {
     });
   }
 };
+
+exports.retreiveCustomerById = async (req, res) => {
+  try {
+    const reqBody = req.body;
+    const data = await customerService.retreiveCustomerById(reqBody.id);
+    res.send(data);
+  } catch (err) {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while getting customer by ID"
+    });
+  }
+};

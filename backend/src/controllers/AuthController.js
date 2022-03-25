@@ -4,7 +4,7 @@ const authService = require("../services/AuthService.js");
 exports.login = async (req, res) => {
   try {
     const reqBody = req.body;
-    const data = await authService.login(reqBody.email, reqBody.password);
+    const data = await authService.login(reqBody.customer_phone, reqBody.password);
     res.send(data);
   } catch (err) {
     res.status(500).send({

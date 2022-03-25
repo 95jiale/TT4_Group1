@@ -29,3 +29,25 @@ exports.create = async (customer_name, customer_phone, customer_address, passwor
     throw err;
   }
 };
+
+// Find a single User with an id
+exports.findOne = async (phoneNumber) => {
+  try {
+    const Customer = db.customers;
+
+    const user = await Customer.findOne({
+      where: {
+        customer_phone: phoneNumber
+      }
+    })
+
+    if (!user) {
+      throw new Error("User not found!");
+    }
+
+    return user;
+  } catch (err) {
+    console.log(err.message);
+    throw err;
+  }
+};
