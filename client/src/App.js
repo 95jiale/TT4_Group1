@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./components/Dashboard.js";
 import InnerContent from "./components/InnerContent.js";
 import ContentPage from "./components/ContentPage.js";
 import SettingsPage from "./components/SettingsPage.js";
 import Login from "./components/Login.js";
-import Register from "./components/Register.js";
+import Signup from "./components/Signup.js";
 import Navbar from "./components/Navbar.js";
 import ProtectedRoutes from "./components/ProtectedRoutes.js";
 import PublicRoutes from "./components/PublicRoutes.js";
@@ -31,7 +27,7 @@ function App() {
 
         {/* <Route path="/login" element={<PublicRoutes />}> */}
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
 
         {/* </Route> */}
         {/* </Route> */}

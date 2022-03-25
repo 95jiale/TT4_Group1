@@ -1,0 +1,9 @@
+.modal {
+  position: fixed;
+  background: hsl(var(--clr-glass));
+  backdrop-filter: blur(1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 20%;
+}

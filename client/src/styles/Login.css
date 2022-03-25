@@ -1,0 +1,41 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  text-decoration: underline;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  background: cover;
+  margin-top: 200px;
+}
+.back-arrow {
+  justify-content: left;
+  background-color: none;
+}
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show-password {
+  margin-left: 10px;
+}
+
+.header {
+}
