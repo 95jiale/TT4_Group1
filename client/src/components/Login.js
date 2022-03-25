@@ -6,26 +6,17 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(true);
-  const [showCPassword, setShowCPassword] = useState(true);
   const [modal, setModal] = useState(false);
   const [password, setPassword] = useState("");
-  const [confirmPW, setConfirmPW] = useState("");
 
   //toggling show/hide pw
   const toggleP = (e) => {
     e.preventDefault();
     setShowPassword(!showPassword);
   };
-  const toggleCP = (e) => {
-    e.preventDefault();
-    setShowCPassword(!showCPassword);
-  };
 
   const handleChangePW = (e) => {
     setPassword(e.target.value);
-  };
-  const handleChangeCPW = (e) => {
-    setConfirmPW(e.target.value);
   };
 
   const navigate = useNavigate();
@@ -65,17 +56,6 @@ function Login() {
         />
         <button className="show-password" onClick={toggleP}>
           {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-        </button>
-      </container>
-      <label>Confirm Password :</label>
-      <container>
-        <input
-          type={showCPassword ? "password" : "text"}
-          placeholder="confirm password"
-          onChange={handleChangeCPW}
-        />
-        <button className="show-password" onClick={toggleCP}>
-          {showCPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
         </button>
       </container>
       <div className="row mt-3">
