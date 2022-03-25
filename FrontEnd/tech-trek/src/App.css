@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+/* CUSTOM STYLES */
+
+* {
+  list-style-type: none;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(173, 210, 229);
+  color: white;
+}
+
+.navlinks{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+} 
