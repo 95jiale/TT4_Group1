@@ -12,7 +12,9 @@ module.exports = app => {
   // Create a new user
   router.post("/users", userController.create);
 
+  // create a new payment
   router.post("/Payment", paymentController.create);
+  
   // router.post("/Loan", userController.getLoans);
 
 
