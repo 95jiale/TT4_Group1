@@ -7,7 +7,21 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 // import Header from "./Header";
 
+
+// import Axios from 'axios'
+
 function Signup() {
+
+  // const [password, setPassword] = useState("");
+  // const [phoneNumber, setPhoneNumber] = useState("");
+
+  //  const register = () => {
+  //   Axios.post(API_URL), {
+  //     phoneNumber: phoneNumber,
+  //     password: password,
+  //   }
+  // }
+
   //input value state
   const [values, setValues] = useState({
     name: "",
@@ -123,7 +137,8 @@ function Signup() {
               onChange2={onChange2}
             />
           ))}
-          <button className="submit-btn">Submit</button>
+          {/* <button className="submit-btn" onClick={register}>Submit</button> */}
+          <button className="submit-btn" >Submit</button>
         </form>
         {isModalActive && (
           <Modal FuncProps={isFunc} userProp={values.username} />

@@ -9,7 +9,7 @@ function HistoryCard() {
         <Card.Body>
           {/* <Card.Title>Loan Name</Card.Title> */}
           <Card.Text>
-            <h4>LoanID::</h4>
+            <h4>LoanID:</h4>
             <h4>Loan Amount:</h4>
           </Card.Text>
           {/* <Button variant="primary">Go somewhere</Button> */}
