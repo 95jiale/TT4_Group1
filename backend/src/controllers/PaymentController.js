@@ -1,7 +1,8 @@
 const paymentService = require("../services/PaymentService.js");
 
-// Create a Customer to the database.
+// create a payment in the database
 exports.create = async (req, res) => {
+    // console.log('hello')
   try {
     const reqBody = req.body;
     const data = await paymentService.create(reqBody.lid, reqBody.amount);
@@ -9,7 +10,7 @@ exports.create = async (req, res) => {
   } catch (err) {
     res.status(500).send({
       message:
-        err.message || "Some error occurred while creating the Customer."
+        err.message || "Some error occurred while creating payment."
     });
   }
 };
