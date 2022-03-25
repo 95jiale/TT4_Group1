@@ -3,6 +3,7 @@ const authController = require("../controllers/AuthController.js");
 
 const customerController = require("../controllers/CustomerController.js");
 const paymentController = require("../controllers/PaymentController.js");
+const loanController = require("../controllers/LoanController.js");
 
 module.exports = app => {
   var router = require("express").Router();
@@ -26,6 +27,8 @@ module.exports = app => {
 
   // Create a new customer
   router.post("/customers", customerController.create);
+
+  router.post("/loans", loanController.retreiveCustomerLoans);
 
   // // Retrieve all users
   // router.get("/users", users.findAll);

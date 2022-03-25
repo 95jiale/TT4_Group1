@@ -1,17 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
 
-    const Loan = sequelize.define("Loan", {
-
-      LoanId: {
-        type: Sequelize.INTEGER,
-        unique: true,
-        allowNull: false
-      },
-
-      loan_amount: {
-        type: Sequelize.DECIMAL,
-        allowNull: false
-      },
+  const Loan = sequelize.define("Loan", {
+    loan_amount: {
+      type: Sequelize.DECIMAL,
+      allowNull: false
+    },
+  },
+    {
+      timestamps: false,
     });
-    return Loan;
-  };
+  return Loan;
+};
