@@ -10,7 +10,7 @@ module.exports = app => {
   router.post("/users", userController.create);
 
   // User must be able to view their current account balance [2]
-  router.post("/balance", userController.retreiveCustomerById);
+  // router.post("/balance", userController.retreiveCustomerById);
   // User must be able to view their current loans [3]
 
   // User must be able to view their loan history [4]
