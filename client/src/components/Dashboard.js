@@ -16,6 +16,30 @@ function Dashboard() {
   const handleClose2 = () => setShowPay(false);
   const handleShow2 = () => setShowPay(true);
 
+  //FOR ADDING LOAN 
+  const [loan, setLoan] = useState("");
+
+  //FOR PAYING
+  const [pay, setPay] = useState("");
+  const [loanId, setLoanId] = useState("");
+
+  const [loansList, setLoansList] = useState([]);
+
+  // const addLoan = () => {
+  //   Axios.post("API_URL", {
+  //     loanId: loanId,
+  //     loan: loan,
+  //   }).then(() => {
+  //     setLoansListList([
+  //       ...loansList,
+  //       {
+  //         loanId: loanId,
+  //         loan: loan,
+  //       },
+  //     ]);
+  //   });
+  // };
+
   return (
     <>
       <Modal
@@ -34,7 +58,13 @@ function Dashboard() {
               <Form.Control placeholder="Enter loan amount" />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              onChange={(e) => {
+                setLoan(e.target.value);
+              }}
+            >
               Submit
             </Button>
           </Form>
@@ -53,11 +83,30 @@ function Dashboard() {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Enter loanId</Form.Label>
+              <Form.Control
+                placeholder="Enter loanId"
+                onChange={(e) => {
+                  setLoanId(e.target.value);
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Amount to pay</Form.Label>
-              <Form.Control placeholder="Enter amount" />
+              <Form.Control
+                placeholder="Enter amount"
+                onChange={(e) => {
+                  setPay(e.target.value);
+                }}
+              />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              //ADD ONCLICK
+            >
+              {" "}
               Submit
             </Button>
           </Form>
