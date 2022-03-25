@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, ListGroup, Card, Button } from "react-bootstrap";
 
-function CustomCard() {
+function HistoryCard() {
   return (
     <Container>
       <Card>
@@ -10,7 +10,7 @@ function CustomCard() {
           <Card.Title>Loan Name</Card.Title>
           <Card.Text>
             <h4>TypeID:</h4>
-            <h4>Outstanding Amount:</h4>
+            <h4>Loan Amount:</h4>
           </Card.Text>
           {/* <Button variant="primary">Go somewhere</Button> */}
         </Card.Body>
@@ -19,4 +19,4 @@ function CustomCard() {
   );
 }
 
-export default CustomCard;
+export default HistoryCard;
