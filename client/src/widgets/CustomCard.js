@@ -7,9 +7,9 @@ function CustomCard() {
       <Card>
         {/* <Card.Header>Featured</Card.Header> */}
         <Card.Body>
-          <Card.Title>Loan Name</Card.Title>
+          {/* <Card.Title>LoanID</Card.Title> */}
           <Card.Text>
-            <h4>TypeID:</h4>
+            <h4>LoanID:</h4>
             <h4>Outstanding Amount:</h4>
           </Card.Text>
           {/* <Button variant="primary">Go somewhere</Button> */}
