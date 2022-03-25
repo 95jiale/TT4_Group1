@@ -9,14 +9,10 @@ function Login() {
   const [showPassword, setShowPassword] = useState(true);
   const [queryNum, setQueryNum] = useState("");
   const [queryPW, setQueryPW] = useState("");
+  const [container, setContainer] = useState(null);
   const [endPoint, setEndPoint] = useState("");
   // const [password, setPassword] = useState("");
   // const [num, setNum] = useState("");
-
-  const user = {
-    number: "12345678",
-    password: "asdASD123!@#",
-  };
 
   //toggling show/hide pw
   const toggleP = (e) => {
@@ -47,42 +43,44 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <h2>Login page</h2>
-      <p>Please login to continue</p>
-      <container className="phone">
-        <label>Phone number :</label>
-        <input
-          value={queryNum}
-          type="text"
-          placeholder="input phone number here"
-          pattern="^[0-9]{8}$"
-          onChange={handleChangeNum}
-        />
-      </container>
-      <container>
-        <label>Password :</label>
-        <input
-          value={queryPW}
-          type={showPassword ? "password" : "text"}
-          placeholder="input password here"
-          pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
-          onChange={handleChangePW}
-        />
-        <button className="show-password" onClick={toggleP}>
-          {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-        </button>
-      </container>
-      <div className="row mt-3">
-        <div className="col-12 d-flex align-item-center justify-content-start">
-          <Button className="btn mx-2" onClick={handleSubmit}>
-            Login
-          </Button>
-          <Button variant="link" onClick={routeChange}>
-            Or Register
-          </Button>
+    <div>
+      <form className="login-page">
+        <h2>Login page</h2>
+        <p>Please login to continue</p>
+        <container className="phone">
+          <label>Phone number :</label>
+          <input
+            value={queryNum}
+            type="text"
+            placeholder="input phone number here"
+            pattern="^[0-9]{8}$"
+            onChange={handleChangeNum}
+          />
+        </container>
+        <container>
+          <label>Password :</label>
+          <input
+            value={queryPW}
+            type={showPassword ? "password" : "text"}
+            placeholder="input password here"
+            pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
+            onChange={handleChangePW}
+          />
+          <button className="show-password" onClick={toggleP}>
+            {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+          </button>
+        </container>
+        <div className="row mt-3">
+          <div className="col-12 d-flex align-item-center justify-content-start">
+            <Button className="btn mx-2" onClick={handleSubmit}>
+              Login
+            </Button>
+            <Button variant="link" onClick={routeChange}>
+              Or Register
+            </Button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
