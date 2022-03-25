@@ -42,6 +42,11 @@ container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://st2.depositphotos.com/38616904/44115/i/450/depositphotos_441152374-stock-photo-abstract-soft-cloud-background-pastel.jpg");
 }
 
 container {

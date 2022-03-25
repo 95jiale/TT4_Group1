@@ -26,16 +26,16 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navlinks">
-        {user && 
+        {user && (
           <>
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/content">Content</Link>
             <Link to="/settings">Settings</Link>
-            {location.pathname !== "/login" && 
+            {location.pathname !== "/login" && (
               <button onClick={logout}>Logout</button>
-            }
+            )}
           </>
-        }
+        )}
         {/* {
           !user && <Link to="/login">Login</Link>
         } */}
