@@ -9,6 +9,13 @@ module.exports = app => {
   // Create a new user
   router.post("/users", userController.create);
 
+  // User must be able to view their current account balance [2]
+  router.post("/balance", userController.retreiveCustomerById);
+  // User must be able to view their current loans [3]
+
+  // User must be able to view their loan history [4]
+
+
   // // Retrieve all users
   // router.get("/users", users.findAll);
 

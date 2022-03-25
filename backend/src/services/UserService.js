@@ -62,7 +62,7 @@ exports.delete = () => {
 
 };
 
-exports.getBalance = async (id) => {
+exports.retreiveCustomerById = async (id) => {
   try {
     const Customer = db.Customer;
 
@@ -76,7 +76,7 @@ exports.getBalance = async (id) => {
       throw new Error("Customer not found!");
     }
 
-    return customer.balance;
+    return customer;
 
   } catch (err) {
     console.log(err.message);
