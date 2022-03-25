@@ -2,15 +2,12 @@ const { env } = require('./config/env');
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const { initializeDb } = require('./entities');
 
 app.use(cors());
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-
-initializeDb();
 
 // simple route
 app.get("/", (req, res) => {

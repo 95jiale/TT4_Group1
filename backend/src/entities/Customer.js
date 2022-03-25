@@ -1,11 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-
-  const Customer = sequelize.define("Customer", {
-    CustomerId: {
-      type: Sequelize.INTEGER,
-      unique: true,
-      allowNull: false
-    },
+  const Customer = sequelize.define("customer", {
     customer_name: {
       type: Sequelize.STRING,
       allowNull: false
@@ -19,9 +13,16 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false
     },
     balance: {
-      type: Sequelize.DECIMAL,
+      type: Sequelize.INTEGER,
       allowNull: false
     },
-  });
+    hashed_password: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+  },
+    {
+      timestamps: false,
+    });
   return Customer;
 };
