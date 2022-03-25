@@ -10,9 +10,9 @@ import React, { useState } from "react";
 function Signup() {
   //input value state
   const [values, setValues] = useState({
-    username: "",
-    email: "",
-    birthday: "",
+    name: "",
+    address: "",
+    phone: "",
   });
   const [values2, setValues2] = useState({
     password: "",
@@ -30,29 +30,30 @@ function Signup() {
       id: 1,
       name: "username",
       type: "text",
-      placeholder: "Username",
+      placeholder: "Name",
       errorMessage:
         "Username should be 3-16 characters and shouldn't include special characters!",
-      label: "Username :",
+      label: "Name :",
       pattern: "^[A-Za-z0-9]{3,16}$", //regex
       required: true,
     },
     {
       id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "Invalid email!",
-      label: "Email :",
+      name: "address",
+      type: "text",
+      placeholder: "Address",
+      errorMessage: "Invalid address!",
+      label: "Address :",
       required: true,
     },
     {
       id: 3,
-      name: "birthday",
-      type: "date",
-      placeholder: "Birthday",
-      errorMessage: "",
-      label: "Birthday :",
+      name: "Phone number",
+      type: "text",
+      placeholder: "Phone number",
+      pattern: "^[0-9]{8}$",
+      errorMessage: "Invalid number!",
+      label: "Phone number :",
     },
   ];
   //input constant for pw and cpw
