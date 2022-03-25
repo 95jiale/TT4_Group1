@@ -7,8 +7,16 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(true);
-  // const [modal, setModal] = useState(false);
-  const [password, setPassword] = useState("");
+  const [queryNum, setQueryNum] = useState("");
+  const [queryPW, setQueryPW] = useState("");
+  const [endPoint, setEndPoint] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [num, setNum] = useState("");
+
+  const user = {
+    number: "12345678",
+    password: "asdASD123!@#",
+  };
 
   //toggling show/hide pw
   const toggleP = (e) => {
@@ -17,14 +25,19 @@ function Login() {
   };
 
   const handleChangePW = (e) => {
-    setPassword(e.target.value);
+    setQueryPW(e.target.value);
+  };
+  const handleChangeNum = (e) => {
+    setQueryNum(e.target.value);
   };
 
   const navigate = useNavigate();
 
   //handleSubmit
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     //TODO: fetch User API
+    e.preventDefault();
+    setEndPoint(queryNum, queryPW);
     localStorage.setItem("user", "test");
     navigate("/dashboard");
   };
@@ -40,21 +53,24 @@ function Login() {
       <container className="phone">
         <label>Phone number :</label>
         <input
+          value={queryNum}
           type="text"
           placeholder="input phone number here"
           pattern="^[0-9]{8}$"
+          onChange={handleChangeNum}
         />
       </container>
       <container>
         <label>Password :</label>
         <input
+          value={queryPW}
           type={showPassword ? "password" : "text"}
           placeholder="input password here"
           pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
           onChange={handleChangePW}
         />
         <button className="show-password" onClick={toggleP}>
-          {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+          {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
         </button>
       </container>
       <div className="row mt-3">
