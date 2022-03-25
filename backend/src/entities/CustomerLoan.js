@@ -12,7 +12,7 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false
       },
       LoanId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
     });
