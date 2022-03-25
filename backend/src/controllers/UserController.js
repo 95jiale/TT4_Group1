@@ -13,3 +13,17 @@ exports.create = async (req, res) => {
     });
   }
 };
+
+// get a user's balance
+exports.getBalance = async (req, res) => {
+  try{
+    const reqBody = req.body;
+    const data = await userService.getBalance(reqBody.id);
+    res.send(data);
+} catch (err) {
+  res.status(500).send({
+    message:
+      err.message || "Some error occurred while getting customer balance"
+  });
+  }
+};

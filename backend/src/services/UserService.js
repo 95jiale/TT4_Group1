@@ -61,3 +61,25 @@ exports.update = () => {
 exports.delete = () => {
 
 };
+
+exports.getBalance = async (id) => {
+  try {
+    const Customer = db.Customer;
+
+    const customer = await Customer.findOne({
+      where: {
+        id: id
+      }
+    })
+
+    if (!customer) {
+      throw new Error("Customer not found!");
+    }
+
+    return customer.balance;
+
+  } catch (err) {
+    console.log(err.message);
+    throw err;
+  }
+};
