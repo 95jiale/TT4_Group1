@@ -20,5 +20,5 @@ db.sequelize = sequelize;
 
 // db.users = require("./User.js")(sequelize, Sequelize);
 db.customers = require("./Customer.js")(sequelize, Sequelize);
-db.customers = require("./Payment.js")(sequelize, Sequelize);
+db.payments = require("./Payment.js")(sequelize, Sequelize);
 module.exports = db;

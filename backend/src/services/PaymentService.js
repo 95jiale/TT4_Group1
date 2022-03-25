@@ -1,7 +1,7 @@
 const db = require("../entities");
 
 // create a new payment
-exports.create = async (amount) => {
+exports.create = async (lid, amount) => {
     let date_ob = new Date();
     let date = ("0" + date_ob.getDate()).slice(-2);
     // current month
@@ -10,7 +10,7 @@ exports.create = async (amount) => {
     let year = date_ob.getFullYear();
 
   try {
-    const Payment = db.Payment;
+    const Payment = db.payments;
 
     // save payment in the db
     const newPayment = await Payment.create({
