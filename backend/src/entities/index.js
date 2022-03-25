@@ -29,7 +29,6 @@ module.exports.initializeDb = async function () {
   db.Sequelize = Sequelize;
   db.sequelize = sequelize;
   db.users = require("./User.js")(sequelize, Sequelize);
-  db.CustomerLoan = require("./CustomerLoan.js")(sequelize, Sequelize);
   db.Loan = require("./Loan.js")(sequelize, Sequelize);
   db.Payment = require("./Payment.js")(sequelize, Sequelize);
   db.sequelize.sync();
