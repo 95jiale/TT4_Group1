@@ -2,16 +2,14 @@ import "../styles/signup.css";
 import FormInput from "./FormInput";
 import PasswordInput from "./PasswordInput";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import Modal from "./Modal";
+import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 // import Header from "./Header";
 
-
 // import Axios from 'axios'
 
 function Signup() {
-
   // const [password, setPassword] = useState("");
   // const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -138,7 +136,7 @@ function Signup() {
             />
           ))}
           {/* <button className="submit-btn" onClick={register}>Submit</button> */}
-          <button className="submit-btn" >Submit</button>
+          <button className="submit-btn">Submit</button>
         </form>
         {isModalActive && (
           <Modal FuncProps={isFunc} userProp={values.username} />

@@ -14,6 +14,11 @@ function Login() {
   // const [password, setPassword] = useState("");
   // const [num, setNum] = useState("");
 
+  const user = {
+    number: "12345678",
+    password: "asdASD123!@#",
+  };
+
   //toggling show/hide pw
   const toggleP = (e) => {
     e.preventDefault();
